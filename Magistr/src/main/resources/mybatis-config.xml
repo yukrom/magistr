@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<settings>
+		<!-- changes from the defaults -->
+		<setting name="cacheEnabled" value="false"/>
+		<setting name="lazyLoadingEnabled" value="false" />
+		<setting name="defaultExecutorType" value="SIMPLE"/>
+	</settings>
+	
+	<typeAliases>
+	    <typeAlias alias="citizen" type="com.bsuir.magistr.domain.Citizen"/>
+        <typeAlias alias="kafedra" type="com.bsuir.magistr.domain.Kafedra"/>
+        <typeAlias alias="language" type="com.bsuir.magistr.domain.Language"/>
+        <typeAlias alias="paidType" type="com.bsuir.magistr.domain.PaidType"/>
+        <typeAlias alias="spec" type="com.bsuir.magistr.domain.Spec"/>
+        <typeAlias alias="studyForm" type="com.bsuir.magistr.domain.StudyForm"/>
+        <typeAlias alias="vuz" type="com.bsuir.magistr.domain.Vuz"/>
+	</typeAliases>
+</configuration>

@@ -1,0 +1,38 @@
+body
+{
+    background-image:url('/magistr/resources/extjs/resources/img/bg.jpg');
+    background-color: #FFFFFF;
+    position: fixed;
+}
+.login-form {
+    margin-top: 45px;
+}
+.login-form fieldset {
+    border: none;
+    float: left;
+    margin-left: 40px;
+    padding: 10px;
+    border-radius: 5px;
+}
+.error {
+    color: #d63737;
+}
+
+.reg-form {
+    margin-top: 45px;
+}
+.reg-form fieldset {
+    border: none;
+    float: left;
+    margin-left: 40px;
+    padding: 10px;
+    border-radius: 5px;
+}
+.news-content {
+    text-wrap: normal;
+    font-size: 24;
+    margin-left: 200px;
+    margin-bottom: 100px;
+    margin-right: 200px;
+    margin-top: 100px;
+}

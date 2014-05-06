@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bsuir.magistr.dao.CommentDAO">
+
+    <select id = "getCommentById" resultType = "Comment" parameterType = "Integer">
+        SELECT id,newsId,author,date,comment FROM comments where id = #{id}
+    </select>
+
+    <select id = "getCommentsByNewsId" resultType = "Comment" >
+        SELECT id,newsId,author,date,comment FROM comments where newsId = #{newsId} order by date DESC LIMIT #{limit} OFFSET #{start}
+    </select>
+
+    <select id = "getQuantity" resultType = "Integer" parameterType = "Integer">
+        SELECT COUNT(id) FROM comments where newsId = #{newsId}
+    </select>
+
+    <delete id="delete" parameterType="Integer">
+        DELETE FROM comments WHERE id = #{id}
+    </delete>
+
+    <update id="update" parameterType="comment">
+        UPDATE comments SET
+          newsId=#{newsId},
+          author=#{author},
+          date=#{date},
+          comment=#{comment}
+          where id = #{id}
+    </update>
+
+    <insert id="add" parameterType="comment">
+        INSERT INTO comments
+        (id,newsId,author,date,comment) VALUES
+        (#{id},#{newsId},#{author},#{date},#{comment})
+    </insert>
+
+</mapper>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bsuir.magistr.dao.ComboDAO">
+
+    <select id = "getCitizen" resultType = "citizen">
+        SELECT id, citizen_name name FROM citizen_name ORDER BY citizen_name
+    </select>
+
+    <select id = "getStudyForm" resultType = "studyForm">
+        SELECT id,frm_name name FROM frm_obuch  ORDER BY frm_name
+    </select>
+
+    <select id = "getLanguages" resultType = "language">
+        SELECT id,inostr_name name FROM inostr_lang  ORDER BY inostr_name
+    </select>
+
+    <select id = "getKafedras" resultType = "kafedra">
+        SELECT id, kafedra_name name, phone name FROM citizen_name  ORDER BY kafedra_name
+    </select>
+
+    <select id = "getPaidTypes" resultType = "paidType">
+        SELECT id,platn name FROM platn  ORDER BY platn
+    </select>
+
+    <select id = "getSpecs" resultType = "spec">
+        SELECT id,spec_shifr specShifr, spec_name specName, spec_name_full specFullName, id_kaf kafId name FROM spec_group  ORDER BY spec_name
+    </select>
+
+    <select id = "getVuz" resultType = "vuz">
+        SELECT id,vuz_name name, e_mail email FROM vuz  ORDER BY vuz_name
+    </select>
+
+</mapper>
