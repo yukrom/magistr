@@ -5,7 +5,7 @@
 <mapper namespace="com.bsuir.magistr.dao.ComboDAO">
 
     <select id = "getCitizen" resultType = "citizen">
-        SELECT id, citizen_name name FROM citizen_name ORDER BY citizen_name
+        SELECT id, citizen_name name FROM citizen_name ORDER BY citizen_name DESC
     </select>
 
     <select id = "getStudyForm" resultType = "studyForm">
@@ -25,7 +25,7 @@
     </select>
 
     <select id = "getSpecs" resultType = "spec">
-        SELECT id,spec_shifr specShifr, spec_name specName, spec_name_full specFullName, id_kaf kafId name FROM spec_group  ORDER BY spec_name
+        SELECT id,spec_shifr specShifr, spec_name specName, spec_name_full specFullName, id_kaf kafId FROM spec_group  ORDER BY spec_name
     </select>
 
     <select id = "getVuz" resultType = "vuz">

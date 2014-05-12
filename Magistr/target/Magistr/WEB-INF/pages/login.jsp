@@ -2,11 +2,11 @@
 <html>
 <head>
 
-    <title>Студенческая магистратура БГУИР</title>
+    <title>BSUIR</title>
     <link rel="stylesheet" href="/magistr/resources/styles.css"/>
     <link rel="stylesheet" type="text/css" href="/magistr/resources/extjs/resources/ext-theme-neptune/ext-theme-neptune-all.css">
     <script type="text/javascript" src="/magistr/resources/extjs/ext-all-debug.js"></script>
-    <script type="text/javascript" src="/magistr/resources/registration/view/RegistrationViewport.js"></script>
+    <script type="text/javascript" src="/magistr/resources/registration/constants/UrlConstants.js"></script>
     <script type="text/javascript" src="/magistr/resources/registration/app.js"></script>
 
 </head>

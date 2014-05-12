@@ -1,7 +1,5 @@
 package com.bsuir.magistr.controller;
 
-import com.bsuir.magistr.service.news.CommentService;
-import com.bsuir.magistr.service.news.NewsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.core.Authentication;
@@ -33,6 +31,7 @@ interface NewsControllerConstants {
 
 @Controller
 public class NewsController implements NewsControllerConstants {
+/*
 
     @Autowired
     private CommentService commentService;
@@ -116,4 +115,5 @@ public class NewsController implements NewsControllerConstants {
     public UnCategorizedNewsWrapper search(String key,Integer limit, Integer start) {
         return new UnCategorizedNewsWrapper(newsService,newsService.search(key,limit,start));
     }
+*/
 }

@@ -12,7 +12,12 @@
 	</settings>
 	
 	<typeAliases>
-	    <typeAlias alias="news" type="com.bsuir.magistr.domain.News"/>
-        <typeAlias alias="comment" type="com.bsuir.magistr.domain.Comment"/>
+	    <typeAlias alias="citizen" type="com.bsuir.magistr.domain.Citizen"/>
+        <typeAlias alias="kafedra" type="com.bsuir.magistr.domain.Kafedra"/>
+        <typeAlias alias="language" type="com.bsuir.magistr.domain.Language"/>
+        <typeAlias alias="paidType" type="com.bsuir.magistr.domain.PaidType"/>
+        <typeAlias alias="spec" type="com.bsuir.magistr.domain.Spec"/>
+        <typeAlias alias="studyForm" type="com.bsuir.magistr.domain.StudyForm"/>
+        <typeAlias alias="vuz" type="com.bsuir.magistr.domain.Vuz"/>
 	</typeAliases>
 </configuration>
