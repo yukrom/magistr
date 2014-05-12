@@ -1,7 +1,8 @@
 package com.bsuir.magistr.controller;
+import com.bsuir.magistr.domain.RoleTypes;
 import com.bsuir.magistr.json.wrapper.UserWrapper;
 import com.bsuir.magistr.json.wrapper.UsersWrapper;
-import com.bsuir.magistr.service.news.UserService;
+import com.bsuir.magistr.service.mgstr.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.annotation.Secured;
@@ -15,16 +16,14 @@ import org.springframework.web.bind.annotation.*;
  * Time: 11:24 AM
  */
 
-interface UserControllerConstants {
+@Controller
+public class UserController {
     public final String BASE_URL = "/";
     public final String REGISTER_URL = "/register";
     public final String LOGIN_URL = "/login";
     public final String LOGIN_ERROR = "User with this username is already exist. Please use another username.";
     public final String USERS_URL = "/users";
-}
-
-@Controller
-public class UserController implements UserControllerConstants {
+    public final String ROLES_URL = "/roles";
 
     @Autowired
     private UserService userService;
@@ -49,14 +48,21 @@ public class UserController implements UserControllerConstants {
         return "login";
     }
 
-    @RequestMapping(value= REGISTER_URL,method = RequestMethod.GET)
+    RequestMapping@RequestMapping(value= ROLES_URL, method = RequestMethod.GET)
+    @ResponseStatus(HttpStatus.OK)
+    @Secured("ROLE_ADMIN")
+    public String getRoles() {
+        return RoleTypes.;
+    }
+
+    /*@RequestMapping(value= REGISTER_URL,method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public String register(Model model) {
         model.addAttribute("error", "");
         return "register";
-    }
+    }*/
 
-    @RequestMapping(value= REGISTER_URL,method = RequestMethod.POST)
+    /*@RequestMapping(value= REGISTER_URL,method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.OK)
     public String newUser(String username, String password, Model model) {
         if(userService.userExists(username)) {
@@ -66,7 +72,7 @@ public class UserController implements UserControllerConstants {
             userService.addUser(username,password);
             return "redirect:login";
         }
-    }
+    }*/
 
     @RequestMapping(value= USERS_URL,method = RequestMethod.GET)
     @Secured("ROLE_ADMIN")

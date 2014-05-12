@@ -1,6 +1,6 @@
 package com.bsuir.magistr.json.wrapper;
 
-import com.bsuir.magistr.service.news.UserService;
+import com.bsuir.magistr.service.mgstr.UserService;
 import org.codehaus.jackson.annotate.JsonProperty;
 
 import java.util.List;

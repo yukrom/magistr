@@ -1,15 +1,21 @@
 package com.bsuir.magistr.domain;
 
-/**
- * Created by Roma on 07.05.2014.
- */
 public class Magistr {
     private Integer id;
+    private Integer idMagCit;
+    private Integer idFrmObuch;
+    private Integer idPlat;
+    private Integer idInostrLang;
+    private Integer idVuz;
+    private Integer idFrmObuch1;
+    private Integer idPlat1;
+    private Integer raiting1;
+    private Integer raiting2;
     private String magName1;
     private String magName2;
     private String magName3;
-    private Integer idMagCit;
     private String phone;
+    private String email;
     private String homePhone;
     private String adresInd;
     private String adresGrd;
@@ -17,23 +23,15 @@ public class Magistr {
     private String adresHs;
     private String adresFl;
     private String idSpecGroup;
-    private Integer idFrmObuch;
-    private Integer idPlat;
-    private Integer nauchTrud;
-    private Integer idInostrLang;
-    private Integer idVuz;
+    private String nauchTrud;
     private String spec1Stup;
-    private Integer idFrmObuch1;
-    private Integer idPlat1;
-    private Integer godVyp;
-    private Boolean checked;
-    private Boolean hostel;
-    private Boolean diplOtlich;
-    private Boolean laureatSp;
-    private Boolean laureatSk;
+    private String godVyp;
     private String primechanie;
-    private Integer raiting1;
-    private Integer raiting2;
+    private Boolean checked = false;
+    private Boolean hostel = false;
+    private Boolean diplOtlich = false;
+    private Boolean laureatSp = false;
+    private Boolean laureatRk = false;
 
     public Integer getId() {
         return id;
@@ -41,6 +39,38 @@ public class Magistr {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Boolean getChecked() {
+        return checked;
+    }
+
+    public void setChecked(Boolean checked) {
+        this.checked = checked;
+    }
+
+    public Boolean getHostel() {
+        return hostel;
+    }
+
+    public Boolean getDiplOtlich() {
+        return diplOtlich;
+    }
+
+    public Boolean getLaureatSp() {
+        return laureatSp;
+    }
+
+    public Boolean getlaureatRk() {
+        return laureatRk;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getMagName1() {
@@ -155,11 +185,11 @@ public class Magistr {
         this.idPlat = idPlat;
     }
 
-    public Integer getNauchTrud() {
+    public String getNauchTrud() {
         return nauchTrud;
     }
 
-    public void setNauchTrud(Integer nauchTrud) {
+    public void setNauchTrud(String nauchTrud) {
         this.nauchTrud = nauchTrud;
     }
 
@@ -203,11 +233,11 @@ public class Magistr {
         this.idPlat1 = idPlat1;
     }
 
-    public Integer getGodVyp() {
+    public String getGodVyp() {
         return godVyp;
     }
 
-    public void setGodVyp(Integer godVyp) {
+    public void setGodVyp(String godVyp) {
         this.godVyp = godVyp;
     }
 
@@ -235,12 +265,12 @@ public class Magistr {
         this.laureatSp = laureatSp;
     }
 
-    public Boolean isLaureatSk() {
-        return laureatSk;
+    public Boolean islaureatRk() {
+        return laureatRk;
     }
 
-    public void setLaureatSk(Boolean laureatSk) {
-        this.laureatSk = laureatSk;
+    public void setlaureatRk(Boolean laureatRk) {
+        this.laureatRk = laureatRk;
     }
 
     public String getPrimechanie() {

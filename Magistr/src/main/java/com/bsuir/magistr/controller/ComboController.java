@@ -1,7 +1,7 @@
 package com.bsuir.magistr.controller;
 
 import com.bsuir.magistr.domain.*;
-import com.bsuir.magistr.service.news.ComboService;
+import com.bsuir.magistr.service.mgstr.ComboService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
