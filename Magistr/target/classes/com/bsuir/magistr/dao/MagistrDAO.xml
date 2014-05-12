@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bsuir.magistr.dao.MagistrDAO">
+
+    <resultMap id="magistrObj" type="com.bsuir.magistr.domain.Magistr">
+        <result column="mag_name" property="magName"></result>
+        <result column="mag_name1" property="magName1"></result>
+        <result column="mag_name2" property="magName2"></result>
+        <result column="id_mag_cit" property="idMagCit"></result>
+        <result column="id_spec_group" property="idSpecGroup"></result>
+        <result column="id_frm_obuch" property="idFrmObuch"></result>
+        <result column="id_plat" property="idPlat"></result>
+        <result column="phone" property="phone"></result>
+        <result column="checked" property="checked"></result>
+        <result column="email" property="email"></result>
+        <result column="home_phone" property="homePhone"></result>
+        <result column="adres_ind" property="adresInd"></result>
+        <result column="adres_grd" property="adresGrd"></result>
+        <result column="adres_str" property="adresStr"></result>
+        <result column="adres_hs" property="adresHs"></result>
+        <result column="adres_fl" property="adresFl"></result>
+        <result column="hostel" property="hostel"></result>
+        <result column="dipl_otlich" property="diplOtlich"></result>
+        <result column="laureat_sp" property="laureatSp"></result>
+        <result column="laureat_rk" property="laureatRk"></result>
+        <result column="nauch_trud" property="nauchTrud"></result>
+        <result column="id_inostr_lang" property="idInostrLang"></result>
+        <result column="id_vuz" property="idVuz"></result>
+        <result column="spec_1stup" property="spec1Stup"></result>
+        <result column="id_frm_obuch1" property="idFrmObuch1"></result>
+        <result column="id_plat1" property="idPlat1"></result>
+        <result column="god_vyp" property="godVyp"></result>
+        <result column="primichanie" property="primichanie"></result>
+        <result column="rating1" property="rating1"></result>
+        <result column="rating2" property="rating2"></result>
+    </resultMap>
+
+    <select id = "getMagistr" resultMap = "magistrObj">
+        SELECT  id,
+          mag_name,
+          mag_name1,
+          mag_name2,
+          id_mag_cit,
+          id_spec_group,
+          id_frm_obuch,
+          id_plat,
+          phone,
+          checked,
+          email,
+          home_phone,
+          adres_ind,
+          adres_grd,
+          adres_str,
+          adres_hs,
+          adres_fl,
+          hostel,
+          dipl_otlich,
+          laureat_sp,
+          laureat_rk,
+          nauch_trud,
+          id_inostr_lang,
+          id_vuz,
+          spec_1stup,
+          id_frm_obuch1,
+          id_plat1,
+          god_vyp,
+          primichanie,
+          rating1,
+          rating2
+          FROM reg_mag
+    </select>
+
+    <insert id = "addMagistr" parameterType="com.bsuir.magistr.domain.Magistr">
+        INSERT INTO  reg_mag
+        VALUES(
+         id,
+         magName1,
+         magName2,
+         magName3,
+         idMagCit,
+         phone,
+         homePhone,
+         adresInd,
+         adresGrd,
+         adresStr,
+         adresHs,
+         adresFl,
+         idSpecGroup,
+         idFrmObuch,
+         idPlat,
+         nauchTrud,
+         idInostrLang
+         idVuz,
+         spec1Stup,
+         idFrmObuch1,
+         idPlat1,
+         godVyp,
+         checked,
+         hostel,
+         diplOtlich,
+         laureatSp,
+         laureatSk,
+         primechanie,
+         raiting1,
+         raiting2,
+        )
+    </insert>
+
+</mapper>

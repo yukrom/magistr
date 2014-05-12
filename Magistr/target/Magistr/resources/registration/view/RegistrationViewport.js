@@ -19,7 +19,7 @@ Ext.define('Magistr.registration.view.RegistrationViewport',{
                 bodyPadding: 5,
                 jsonSubmit: true,
                 layout: 'hbox',
-                url: 'http://localhost:8080/magistr/add',
+                url: 'http://localhost:8080/magistr/register',
                 method: 'POST',
                 items: [
                     {
@@ -40,21 +40,21 @@ Ext.define('Magistr.registration.view.RegistrationViewport',{
                                 items: [
                                     {
                                         fieldLabel: 'Фамилия<font color="red">*</font> ',
-                                        name: 'mag_name1',
+                                        name: 'magName1',
                                         allowBlank: false,
                                         regex: new RegExp('\\D+'),
                                         regexText: 'Поле должно содержать только буквы'
                                     },
                                     {
                                         fieldLabel: 'Имя<font color="red">*</font> ',
-                                        name: 'mag_name2',
+                                        name: 'magName2',
                                         allowBlank: false,
                                         regex: new RegExp('\\D+'),
                                         regexText: 'Поле должно содержать только буквы'
                                     },
                                     {
                                         fieldLabel: 'Отчество<font color="red">*</font> ',
-                                        name: 'mag_name3',
+                                        name: 'magName3',
                                         allowBlank: false,
                                         regex: new RegExp('\\D+'),
                                         regexText: 'Поле должно содержать только буквы'
@@ -62,7 +62,7 @@ Ext.define('Magistr.registration.view.RegistrationViewport',{
                                     {
                                         xtype: 'combo',
                                         fieldLabel: 'Гражданство<font color="red">*</font> ',
-                                        name: 'id_mag_cit',
+                                        name: 'idMagCit',
                                         allowBlank: false,
                                         store: Ext.create('Magistr.registration.store.CitizenStore'),
                                         queryMode: 'local',
@@ -91,7 +91,7 @@ Ext.define('Magistr.registration.view.RegistrationViewport',{
                                     },
                                     {
                                         fieldLabel: 'Домашний<font color="red">*</font> ',
-                                        name: 'home_phone',
+                                        name: 'homePhone',
                                         allowBlank: false,
                                         regex: new RegExp('\\+375\\d+'),
                                         regexText: 'Введите номер в формате +375XXXXXXXXX'
@@ -117,33 +117,33 @@ Ext.define('Magistr.registration.view.RegistrationViewport',{
                                     },
                                     {
                                         fieldLabel: 'Почтовый индекс<font color="red">*</font> ',
-                                        name: 'adres_ind',
+                                        name: 'adresInd',
                                         allowBlank: false,
                                         regex: new RegExp('\\d+'),
                                         regexText: 'Индекс должен содержать только цифры'
                                     },
                                     {
                                         fieldLabel: 'Город<font color="red">*</font> ',
-                                        name: 'adres_grd',
+                                        name: 'adresGrd',
                                         allowBlank: false,
                                         regex: new RegExp('\\D+'),
                                         regexText: 'Поле должно содержать только буквы'
                                     },
                                     {
                                         fieldLabel: 'Улица<font color="red">*</font> ',
-                                        name: 'adres_str',
+                                        name: 'adresStr',
                                         allowBlank: false,
                                         regex: new RegExp('\\D+'),
                                         regexText: 'Поле должно содержать только буквы'
                                     },
                                     {
                                         fieldLabel: 'Номер дома<font color="red">*</font> ',
-                                        name: 'adres_hs',
+                                        name: 'adresHs',
                                         allowBlank: false
                                     },
                                     {
                                         fieldLabel: 'Номер квартиры<font color="red">*</font> ',
-                                        name: 'adres_hs',
+                                        name: 'adresFl',
                                         allowBlank: false,
                                         regex: new RegExp('\\d+'),
                                         regexText: 'Поле должно содержать только цифры'
@@ -174,7 +174,7 @@ Ext.define('Magistr.registration.view.RegistrationViewport',{
                                     {
                                         xtype: 'combo',
                                         fieldLabel: 'Предполагаемая специальность магистратуры<font color="red">*</font> ',
-                                        name: 'id_spec_group',
+                                        name: 'idSpecGroup',
                                         allowBlank: false,
                                         store: Ext.create('Magistr.registration.store.SpecStore'),
                                         queryMode: 'local',
@@ -184,7 +184,7 @@ Ext.define('Magistr.registration.view.RegistrationViewport',{
                                     {
                                         xtype: 'combo',
                                         fieldLabel: 'Форма обучения в магистратуре (очное/заочное)<font color="red">*</font> ',
-                                        name: 'id_frm_obuch',
+                                        name: 'idFrmObuch',
                                         allowBlank: false,
                                         store: Ext.create('Magistr.registration.store.StudyFormStore'),
                                         queryMode: 'local',
@@ -194,7 +194,7 @@ Ext.define('Magistr.registration.view.RegistrationViewport',{
                                     {
                                         xtype: 'combo',
                                         fieldLabel: 'Форма обучения в магистратуре (платное/бюджет)<font color="red">*</font> ',
-                                        name: 'id_plat',
+                                        name: 'idPlat',
                                         allowBlank: false,
                                         store: Ext.create('Magistr.registration.store.PaidTypeStore'),
                                         queryMode: 'local',
@@ -203,13 +203,13 @@ Ext.define('Magistr.registration.view.RegistrationViewport',{
                                     },
                                     {
                                         fieldLabel: 'Научных трудов<font color="red">*</font> ',
-                                        name: 'nauch_trud',
+                                        name: 'nauchTrud',
                                         allowBlank: false
                                     },
                                     {
                                         xtype: 'combo',
                                         fieldLabel: 'Иностранный язык (основной, который изучался ранее)<font color="red">*</font> ',
-                                        name: 'id_inostr_lang',
+                                        name: 'idInostrLang',
                                         allowBlank: false,
                                         store: Ext.create('Magistr.registration.store.LanguageStore'),
                                         queryMode: 'local',
@@ -219,7 +219,7 @@ Ext.define('Magistr.registration.view.RegistrationViewport',{
                                     {
                                         xtype: 'combo',
                                         fieldLabel: 'УВО первой ступени (аббревиатура университета)<font color="red">*</font> ',
-                                        name: 'id_vuz',
+                                        name: 'idVuz',
                                         allowBlank: false,
                                         store: Ext.create('Magistr.registration.store.VuzStore'),
                                         queryMode: 'local',
@@ -228,13 +228,13 @@ Ext.define('Magistr.registration.view.RegistrationViewport',{
                                     },
                                     {
                                         fieldLabel: '<a href="/magistr/resources/static/Specialnosti.pdf" target="_blank">Cпециальность первой ступени ВО (шифр)</a><br>в формате 1-NN NN NN-NN<font color="red">*</font> ',
-                                        name: 'nauch_trud',
+                                        name: 'spec1Stup',
                                         allowBlank: false
                                     },
                                     {
                                         xtype: 'combo',
                                         fieldLabel: 'Форма обучения первой ступени (очное/заочное)<font color="red">*</font> ',
-                                        name: 'id_frm_obuch1',
+                                        name: 'idFrmObuch1',
                                         allowBlank: false,
                                         store: Ext.create('Magistr.registration.store.StudyFormStore'),
                                         queryMode: 'local',
@@ -244,7 +244,7 @@ Ext.define('Magistr.registration.view.RegistrationViewport',{
                                     {
                                         xtype: 'combo',
                                         fieldLabel: 'Форма обучения на первой ступени (платное/бюджет)<font color="red">*</font> ',
-                                        name: 'id_plat1',
+                                        name: 'idPlat1',
                                         allowBlank: false,
                                         store: Ext.create('Magistr.registration.store.PaidTypeStore'),
                                         queryMode: 'local',
@@ -253,7 +253,7 @@ Ext.define('Magistr.registration.view.RegistrationViewport',{
                                     },
                                     {
                                         fieldLabel: 'Год окончания первой ступени УВО<font color="red">*</font> ',
-                                        name: 'god_vyp',
+                                        name: 'godVyp',
                                         allowBlank: false,
                                         regex: new RegExp('\\d{4}'),
                                         regexText: 'Поле должно содержать только цифры'

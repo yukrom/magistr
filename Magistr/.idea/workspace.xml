@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="93010ecc-28fb-48f7-92c5-a9bf458df75a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/bsuir/magistr/dao/MagistrDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/bsuir/magistr/dao/MagistrDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/com/bsuir/magistr/dao/MagistrDAO.xml" afterPath="$PROJECT_DIR$/src/main/resources/com/bsuir/magistr/dao/MagistrDAO.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/register.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/register.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/security.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/security.xml" />
+    <list default="true" id="93010ecc-28fb-48f7-92c5-a9bf458df75a" name="Default" comment="commit this shit">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Magistr.iws" />
@@ -181,6 +174,9 @@
     <FindUsagesManager>
       <setting name="OPEN_NEW_TAB" value="true" />
     </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
@@ -1168,12 +1164,17 @@
       <updated>1399206740011</updated>
       <workItem from="1399206746525" duration="3241000" />
       <workItem from="1399240488401" duration="26128000" />
-      <workItem from="1399896551602" duration="5201000" />
+      <workItem from="1399896551602" duration="5278000" />
     </task>
+    <task id="LOCAL-00001" summary="commit this shit">
+      <created>1399907998212</created>
+      <updated>1399907998212</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34570000" />
+    <option name="totallyTimeSpent" value="34647000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1224,6 +1225,8 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
+    <MESSAGE value="commit this shit" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit this shit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />

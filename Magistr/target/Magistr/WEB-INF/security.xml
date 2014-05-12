@@ -20,7 +20,7 @@
     <beans:bean name="bcryptEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
 
     <http auto-config="true" use-expressions="true">
-        <form-login login-page="/login" default-target-url="/index" authentication-failure-url="/login?auth=failed"/>
+        <form-login login-page="/login" default-target-url="/administration" authentication-failure-url="/login?auth=failed"/>
         <logout logout-url="/logout" logout-success-url="/"/>
         <remember-me/>
     </http>

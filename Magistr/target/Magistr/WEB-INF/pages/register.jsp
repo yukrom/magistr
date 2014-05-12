@@ -2,27 +2,15 @@
 <html>
 <head>
 
-    <title>News authorization</title>
+    <title>&#1056;&#1077;&#1075;&#1080;&#1089;&#1090;&#1088;&#1072;&#1094;&#1080;&#1103; &#1087;&#1086;&#1089;&#1090;&#1091;&#1087;&#1072;&#1102;&#1097;&#1077;&#1075;&#1086; &#1074; &#1084;&#1072;&#1075;&#1080;&#1089;&#1090;&#1088;&#1072;&#1090;&#1091;&#1088;&#1091;.</title>
     <link rel="stylesheet" href="/magistr/resources/styles.css"/>
+    <link rel="stylesheet" type="text/css" href="/magistr/resources/extjs/resources/ext-theme-neptune/ext-theme-neptune-all.css">
+    <script type="text/javascript" src="/magistr/resources/extjs/ext-all-debug.js"></script>
+    <script type="text/javascript" src="/magistr/resources/registration/constants/UrlConstants.js"></script>
+    <script type="text/javascript" src="/magistr/resources/registration/app.js"></script>
 
 </head>
 
 <body>
-<!-- // login-form // -->
-
-<div class="login-form">
-    <form action="register" method="POST" name="reg_form" id="reg_form">
-        <fieldset style="background: white;">
-
-            <label for="login">Login <input type="text" name="username" value="" id="login"></label>
-            <label for="password">Password <input type="password" name="password" value="" id="password"></label>
-            <input type="submit" value="Register" title="Register">
-            <a href="login">Login</a>
-            <br/>
-            <span class="error" id="error-message">${error}</span>
-        </fieldset>
-    </form>
-</div>
-
 </body>
 </html>

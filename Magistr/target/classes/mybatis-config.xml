@@ -19,5 +19,6 @@
         <typeAlias alias="spec" type="com.bsuir.magistr.domain.Spec"/>
         <typeAlias alias="studyForm" type="com.bsuir.magistr.domain.StudyForm"/>
         <typeAlias alias="vuz" type="com.bsuir.magistr.domain.Vuz"/>
+        <typeAlias alias="magistr" type="com.bsuir.magistr.domain.Magistr"/>
 	</typeAliases>
 </configuration>
