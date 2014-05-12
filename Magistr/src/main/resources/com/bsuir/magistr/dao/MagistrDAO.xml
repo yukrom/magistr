@@ -72,4 +72,40 @@
           FROM reg_mag
     </select>
 
+    <insert id = "addMagistr" parameterType="com.bsuir.magistr.domain.Magistr">
+        INSERT INTO  reg_mag
+        VALUES(
+         id,
+         magName1,
+         magName2,
+         magName3,
+         idMagCit,
+         phone,
+         homePhone,
+         adresInd,
+         adresGrd,
+         adresStr,
+         adresHs,
+         adresFl,
+         idSpecGroup,
+         idFrmObuch,
+         idPlat,
+         nauchTrud,
+         idInostrLang
+         idVuz,
+         spec1Stup,
+         idFrmObuch1,
+         idPlat1,
+         godVyp,
+         checked,
+         hostel,
+         diplOtlich,
+         laureatSp,
+         laureatSk,
+         primechanie,
+         raiting1,
+         raiting2,
+        )
+    </insert>
+
 </mapper>

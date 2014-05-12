@@ -257,10 +257,7 @@
                 <version>2.16</version>
                 <configuration>
                     <workingDirectory></workingDirectory>
-                    <suiteXmlFiles>
-                        <suiteXmlFile>src/test/resources/suites/TestingSuite.xml</suiteXmlFile>
-                    </suiteXmlFiles>
-                    <properties>
+                     <properties>
                         <property>
                             <name>usedefaultlisteners</name>
                             <value>false</value>
