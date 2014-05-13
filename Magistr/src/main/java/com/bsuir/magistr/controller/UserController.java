@@ -11,6 +11,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * User: RomanYukhnevich
  * Date: 10/28/13
@@ -20,7 +23,7 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class UserController {
     public final String BASE_URL = "/";
-    public final String REGISTER_URL = "/register";
+    public final String ADD_URL = "/user/add";
     public final String LOGIN_URL = "/login";
     public final String LOGIN_ERROR = "User with this username is already exist. Please use another username.";
     public final String USERS_URL = "/users";
@@ -63,17 +66,20 @@ public class UserController {
         return "register";
     }*/
 
-    /*@RequestMapping(value= REGISTER_URL,method = RequestMethod.POST)
+    @RequestMapping(value= ADD_URL,method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.OK)
-    public String newUser(String username, String password, Model model) {
+    public Map<String,String> newUser(String username, String password, String role) {
         if(userService.userExists(username)) {
-            model.addAttribute("error", LOGIN_ERROR);
-            return "register";
+            Map<String,String> map = new HashMap<String,String>();
+            map.put("message","Пользователь с таким именем существует в системе!");
+            return map;
         } else {
-            userService.addUser(username,password);
-            return "redirect:login";
+            userService.addUser(username,password,role);
+            Map<String,String> map = new HashMap<String,String>();
+            map.put("message","Пользователь создан!");
+            return map;
         }
-    }*/
+    }
 
     @RequestMapping(value = USERS_URL, method = RequestMethod.GET)
     @Secured("ROLE_ADMIN")

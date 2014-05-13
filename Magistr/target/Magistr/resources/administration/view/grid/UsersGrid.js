@@ -1,28 +1,15 @@
-/**
- * User: RomanYukhnevich
- * Date: 10/30/13
- * Time: 7:20 PM
- */
-
-/**
- * User: RomanYukhnevich
- * Date: 10/18/13
- * Time: 2:58 PM
- */
-Ext.define('News.view.grid.UsersGrid', {
+Ext.define('Magistr.administration.view.grid.UsersGrid', {
     extend: 'Ext.grid.Panel',
     xtype: 'usersgrid',
-    layout: 'anchor',
     id: 'users-grid',
-    title: 'Users',
+    title: 'Управление пользователями',
     columnLines: true,
     loadMask: true,
     forceFit: true,
-    autoScroll: true,
     initComponent: function () {
         var me = this;
         var authority;
-        var store = new News.store.UsersStore();
+        var store =Ext.create('Magistr.administration.store.UsersStore');
         var rowEditing = {
             ptype: 'rowediting',
             clicksToMoveEditor: 1,
@@ -77,5 +64,5 @@ Ext.define('News.view.grid.UsersGrid', {
         });
         me.callParent(arguments);
     }
-})
+});
 

@@ -3,27 +3,27 @@
  * Date: 10/17/13
  * Time: 5:28 PM
  */
-Ext.define('News.view.MainContent',{
-    extend:'Ext.panel.Panel',
+Ext.define('Magistr.administration.view.MainContent', {
+    extend: 'Ext.panel.Panel',
     xtype: 'maincontent',
-    initComponent:function () {
+    initComponent: function () {
         var me = this;
-        Ext.apply(me,{
+        Ext.apply(me, {
             border: false,
+            layout: 'hbox',
             items: [
                 {
-                    xtype: 'tabpanel',
-                    border: false,
-                    id: 'magistr-tabpanel',
-                    items: [{
-                        layout: 'fit',
-                        id: 'preview-tab',
-                        title: 'News preview',
-                        items: [{xtype: 'previewgrid'}]
-                    }]
+                    xtype: 'usersgrid',
+                    collapsible: true,
+                    collapsed: true
+                },
+                {
+                    xtype: 'magistrgrid',
+                    collapsible: true,
+                    collapsed: false
                 }
             ]
-         });
+        });
         me.callParent(arguments);
     }
-})
+});

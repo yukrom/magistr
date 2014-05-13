@@ -3,10 +3,10 @@
  * Date: 10/30/13
  * Time: 7:16 PM
  */
-Ext.define('News.store.UsersStore',{
+Ext.define('Magistr.administration.store.UsersStore',{
     extend: 'Ext.data.Store',
     storeId: 'usersStore',
-    model: 'News.model.UsersModel',
+    model: 'Magistr.administration.model.UsersModel',
     proxy: {
         type: 'rest',
         url: USERS_URL,
@@ -20,4 +20,4 @@ Ext.define('News.store.UsersStore',{
     autoLoad: true,
     autoSync: true,
     pageSize: 10
-})
+});

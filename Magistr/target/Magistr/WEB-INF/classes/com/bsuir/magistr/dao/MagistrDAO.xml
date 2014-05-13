@@ -5,9 +5,9 @@
 <mapper namespace="com.bsuir.magistr.dao.MagistrDAO">
 
     <resultMap id="magistrObj" type="com.bsuir.magistr.domain.Magistr">
-        <result column="mag_name" property="magName"></result>
-        <result column="mag_name1" property="magName1"></result>
-        <result column="mag_name2" property="magName2"></result>
+        <result column="mag_name" property="magName1"></result>
+        <result column="mag_name1" property="magName2"></result>
+        <result column="mag_name2" property="magName3"></result>
         <result column="id_mag_cit" property="idMagCit"></result>
         <result column="id_spec_group" property="idSpecGroup"></result>
         <result column="id_frm_obuch" property="idFrmObuch"></result>
@@ -32,9 +32,9 @@
         <result column="id_frm_obuch1" property="idFrmObuch1"></result>
         <result column="id_plat1" property="idPlat1"></result>
         <result column="god_vyp" property="godVyp"></result>
-        <result column="primichanie" property="primichanie"></result>
-        <result column="rating1" property="rating1"></result>
-        <result column="rating2" property="rating2"></result>
+        <result column="primichanie" property="primechanie"></result>
+        <result column="rating1" property="raiting1"></result>
+        <result column="rating2" property="raiting2"></result>
     </resultMap>
 
     <select id = "getMagistr" resultMap = "magistrObj">

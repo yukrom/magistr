@@ -41,11 +41,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void addUser(String username, String password) {
+    public void addUser(String username, String password, String role) {
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         password = encoder.encode(password);
         List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
-        authorities.add( new SimpleGrantedAuthority("ROLE_USER"));
+        authorities.add( new SimpleGrantedAuthority(role));
         UserDetails user = new User(username,password,authorities);
         userDetailsManager.createUser(user);
     }

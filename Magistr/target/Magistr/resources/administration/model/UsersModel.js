@@ -4,7 +4,7 @@
  * Time: 7:11 PM
  */
 
-Ext.define('News.model.UsersModel',{
+Ext.define('Magistr.administration.model.UsersModel',{
     extend: 'Ext.data.Model',
     fields: [
         {name: 'password',  type: 'string'},
@@ -16,4 +16,4 @@ Ext.define('News.model.UsersModel',{
         {name: 'authority', type: 'string'}
 
     ]
-})
+});

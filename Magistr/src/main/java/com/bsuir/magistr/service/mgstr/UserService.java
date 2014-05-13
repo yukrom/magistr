@@ -14,7 +14,7 @@ public interface UserService {
 
     public List<UserWrapper> findAllUsers(Integer limit, Integer start);
 
-    public void addUser(String username, String password);
+    public void addUser(String username, String password, String role);
 
     public void deleteUser(UserDetails user);
 

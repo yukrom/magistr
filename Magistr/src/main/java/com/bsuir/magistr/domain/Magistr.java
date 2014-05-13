@@ -49,22 +49,6 @@ public class Magistr {
         this.checked = checked;
     }
 
-    public Boolean getHostel() {
-        return hostel;
-    }
-
-    public Boolean getDiplOtlich() {
-        return diplOtlich;
-    }
-
-    public Boolean getLaureatSp() {
-        return laureatSp;
-    }
-
-    public Boolean getlaureatRk() {
-        return laureatRk;
-    }
-
     public String getEmail() {
         return email;
     }

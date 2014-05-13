@@ -16,11 +16,19 @@ import java.util.List;
  */
 @Controller
 public class MagistrController {
+    private final static String ADMINISTRATION_URL = "/administration";
     private final static String REGISTER_MAGISTR_PATH = "/register";
-    private final static String GET_MAGISTR_PATH = "/list";
+    private final static String GET_MAGISTR_PATH = "list";
 
     @Autowired
     private MagistrService magistrService;
+
+    @RequestMapping(value= ADMINISTRATION_URL, method = RequestMethod.GET)
+    @ResponseStatus(HttpStatus.OK)
+    @Secured({"ROLE_ADMIN","ROLE_USER"})
+    public String getIndex(){
+        return "administration";
+    }
 
     @RequestMapping(value= REGISTER_MAGISTR_PATH, method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.OK)
@@ -35,11 +43,10 @@ public class MagistrController {
         return "register";
     }
 
-    @RequestMapping(value = GET_MAGISTR_PATH, method = RequestMethod.GET)
+    @RequestMapping(value = GET_MAGISTR_PATH, method = RequestMethod.GET, produces = "application/json")
     @ResponseStatus(HttpStatus.OK)
+    @ResponseBody
     public List<Magistr> getList() {
         return magistrService.getMagistr();
     }
-
-
 }

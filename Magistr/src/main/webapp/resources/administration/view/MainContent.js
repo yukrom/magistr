@@ -3,7 +3,7 @@
  * Date: 10/17/13
  * Time: 5:28 PM
  */
-Ext.define('News.view.MainContent', {
+Ext.define('Magistr.administration.view.MainContent', {
     extend: 'Ext.panel.Panel',
     xtype: 'maincontent',
     initComponent: function () {
@@ -16,9 +16,14 @@ Ext.define('News.view.MainContent', {
                     xtype: 'usersgrid',
                     collapsible: true,
                     collapsed: true
+                },
+                {
+                    xtype: 'magistrgrid',
+                    collapsible: true,
+                    collapsed: false
                 }
             ]
         });
         me.callParent(arguments);
     }
-})
+});
