@@ -9,12 +9,15 @@ import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * Created by Roma on 07.05.2014.
  */
 @Controller
 public class MagistrController {
     private final static String REGISTER_MAGISTR_PATH = "/register";
+    private final static String GET_MAGISTR_PATH = "/list";
 
     @Autowired
     private MagistrService magistrService;
@@ -31,4 +34,12 @@ public class MagistrController {
     public String register() {
         return "register";
     }
+
+    @RequestMapping(value = GET_MAGISTR_PATH, method = RequestMethod.GET)
+    @ResponseStatus(HttpStatus.OK)
+    public List<Magistr> getList() {
+        return magistrService.getMagistr();
+    }
+
+
 }

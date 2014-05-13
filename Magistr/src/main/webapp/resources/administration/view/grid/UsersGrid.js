@@ -1,20 +1,9 @@
-/**
- * User: RomanYukhnevich
- * Date: 10/30/13
- * Time: 7:20 PM
- */
-
-/**
- * User: RomanYukhnevich
- * Date: 10/18/13
- * Time: 2:58 PM
- */
-Ext.define('News.view.grid.UsersGrid', {
+Ext.define('Magistr.administration.view.grid.UsersGrid', {
     extend: 'Ext.grid.Panel',
     xtype: 'usersgrid',
     layout: 'anchor',
     id: 'users-grid',
-    title: 'Users',
+    title: 'Управление пользователями',
     columnLines: true,
     loadMask: true,
     forceFit: true,
