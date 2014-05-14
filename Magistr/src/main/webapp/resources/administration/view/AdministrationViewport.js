@@ -48,6 +48,11 @@ Ext.define('Magistr.administration.view.AdministrationViewport', {
                             xtype: 'magistrgrid',
                             collapsible: true,
                             collapsed: false
+                        },
+                        {
+                            xtype: 'magistrform',
+                            collapsible: true,
+                            collapsed: true
                         }
                     ]
                 }
