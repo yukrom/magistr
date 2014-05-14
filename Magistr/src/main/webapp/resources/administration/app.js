@@ -8,6 +8,7 @@ Ext.Loader.setPath('Magistr.administration', '/magistr/resources/administration'
 Ext.application({
     name: 'Magistr.administration',
     appFolder: '/magistr/resources/administration',
+    /*controllers: ['MainController'],*/
     views: ['grid.UsersGrid', 'grid.MagistrGrid', 'form.MagistrForm'],
     stores: ['UsersStore', 'MagistrStore', 'CitizenStore', 'KafedraStore', 'LanguageStore', 'PaidTypeStore', 'SpecStore', 'StudyFormStore', 'VuzStore'],
     models: ['UsersModel', 'MagistrModel', 'KafedraModel', 'SimpleMapModel', 'SpecModel', 'VuzModel'],

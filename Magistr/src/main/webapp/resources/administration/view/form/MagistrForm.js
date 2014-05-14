@@ -7,286 +7,300 @@
 Ext.define('Magistr.administration.view.form.MagistrForm', {
     extend: 'Ext.form.Panel',
     xtype: 'magistrform',
-    height: '100%',
+    id: 'magistr-form',
+    minHeight: 750,
     bodyPadding: 5,
     jsonSubmit: true,
     layout: 'hbox',
     url: 'http://localhost:8080/magistr/update',
     method: 'POST',
-    items: [
-        {
-            xtype: 'container',
-            flex: 4,
-            height: '100%',
-            items: [
-                {
-                    xtype: 'fieldset',
-                    title: 'Персональные данные',
-                    collapsible: true,
-                    defaultType: 'textfield',
-                    defaults: {
-                        blankText: 'Поле обязательно для заполнения',
-                        anchor: '100%'
+    initComponent: function () {
+        var me = this;
+        me.items = [
+            {
+                xtype: 'container',
+                flex: 4,
+                height: '100%',
+                items: [
+                    {
+                        xtype: 'fieldset',
+                        title: '&#1055;&#1077;&#1088;&#1089;&#1086;&#1085;&#1072;&#1083;&#1100;&#1085;&#1099;&#1077; &#1076;&#1072;&#1085;&#1085;&#1099;&#1077;',
+                        collapsible: true,
+                        defaultType: 'textfield',
+                        defaults: {
+                            blankText: '&#1055;&#1086;&#1083;&#1077; &#1086;&#1073;&#1103;&#1079;&#1072;&#1090;&#1077;&#1083;&#1100;&#1085;&#1086; &#1076;&#1083;&#1103; &#1079;&#1072;&#1087;&#1086;&#1083;&#1085;&#1077;&#1085;&#1080;&#1103;',
+                            anchor: '100%'
+                        },
+                        layout: 'anchor',
+                        items: [
+                            {
+                                fieldLabel: '&#1060;&#1072;&#1084;&#1080;&#1083;&#1080;&#1103;<font color="red">*</font> ',
+                                name: 'magName1',
+                                allowBlank: false,
+                                regex: new RegExp('\\D+'),
+                                regexText: '&#1055;&#1086;&#1083;&#1077; &#1076;&#1086;&#1083;&#1078;&#1085;&#1086; &#1089;&#1086;&#1076;&#1077;&#1088;&#1078;&#1072;&#1090;&#1100; &#1090;&#1086;&#1083;&#1100;&#1082;&#1086; &#1073;&#1091;&#1082;&#1074;&#1099;'
+                            },
+                            {
+                                fieldLabel: '&#1048;&#1084;&#1103;<font color="red">*</font> ',
+                                name: 'magName2',
+                                allowBlank: false,
+                                regex: new RegExp('\\D+'),
+                                regexText: '&#1055;&#1086;&#1083;&#1077; &#1076;&#1086;&#1083;&#1078;&#1085;&#1086; &#1089;&#1086;&#1076;&#1077;&#1088;&#1078;&#1072;&#1090;&#1100; &#1090;&#1086;&#1083;&#1100;&#1082;&#1086; &#1073;&#1091;&#1082;&#1074;&#1099;'
+                            },
+                            {
+                                fieldLabel: '&#1054;&#1090;&#1095;&#1077;&#1089;&#1090;&#1074;&#1086;<font color="red">*</font> ',
+                                name: 'magName3',
+                                allowBlank: false,
+                                regex: new RegExp('\\D+'),
+                                regexText: '&#1055;&#1086;&#1083;&#1077; &#1076;&#1086;&#1083;&#1078;&#1085;&#1086; &#1089;&#1086;&#1076;&#1077;&#1088;&#1078;&#1072;&#1090;&#1100; &#1090;&#1086;&#1083;&#1100;&#1082;&#1086; &#1073;&#1091;&#1082;&#1074;&#1099;'
+                            },
+                            {
+                                xtype: 'combo',
+                                fieldLabel: '&#1043;&#1088;&#1072;&#1078;&#1076;&#1072;&#1085;&#1089;&#1090;&#1074;&#1086;<font color="red">*</font> ',
+                                name: 'idMagCit',
+                                allowBlank: false,
+                                store: Ext.create('Magistr.administration.store.CitizenStore'),
+                                queryMode: 'local',
+                                displayField: 'name',
+                                valueField: 'id'
+                            }
+                        ]
                     },
-                    layout: 'anchor',
-                    items: [
-                        {
-                            fieldLabel: 'Фамилия<font color="red">*</font> ',
-                            name: 'magName1',
-                            allowBlank: false,
-                            regex: new RegExp('\\D+'),
-                            regexText: 'Поле должно содержать только буквы'
+                    {
+                        xtype: 'fieldset',
+                        title: '&#1050;&#1086;&#1085;&#1090;&#1072;&#1082;&#1090;&#1085;&#1099;&#1081; &#1090;&#1077;&#1083;&#1077;&#1092;&#1086;&#1085; &#1074; &#1092;&#1086;&#1088;&#1084;&#1072;&#1090;&#1077; +375XXXXXXXXX',
+                        collapsible: true,
+                        defaultType: 'textfield',
+                        defaults: {
+                            blankText: '&#1055;&#1086;&#1083;&#1077; &#1086;&#1073;&#1103;&#1079;&#1072;&#1090;&#1077;&#1083;&#1100;&#1085;&#1086; &#1076;&#1083;&#1103; &#1079;&#1072;&#1087;&#1086;&#1083;&#1085;&#1077;&#1085;&#1080;&#1103;',
+                            anchor: '100%'
                         },
-                        {
-                            fieldLabel: 'Имя<font color="red">*</font> ',
-                            name: 'magName2',
-                            allowBlank: false,
-                            regex: new RegExp('\\D+'),
-                            regexText: 'Поле должно содержать только буквы'
-                        },
-                        {
-                            fieldLabel: 'Отчество<font color="red">*</font> ',
-                            name: 'magName3',
-                            allowBlank: false,
-                            regex: new RegExp('\\D+'),
-                            regexText: 'Поле должно содержать только буквы'
-                        },
-                        {
-                            xtype: 'combo',
-                            fieldLabel: 'Гражданство<font color="red">*</font> ',
-                            name: 'idMagCit',
-                            allowBlank: false,
-                            store: Ext.create('Magistr.administration.store.CitizenStore'),
-                            queryMode: 'local',
-                            displayField: 'name',
-                            valueField: 'id'
-                        }
-                    ]
-                },
-                {
-                    xtype: 'fieldset',
-                    title: 'Контактный телефон в формате +375XXXXXXXXX',
-                    collapsible: true,
-                    defaultType: 'textfield',
-                    defaults: {
-                        blankText: 'Поле обязательно для заполнения',
-                        anchor: '100%'
+                        layout: 'anchor',
+                        items: [
+                            {
+                                fieldLabel: '&#1052;&#1086;&#1073;&#1080;&#1083;&#1100;&#1085;&#1099;&#1081;<font color="red">*</font> ',
+                                name: 'phone',
+                                allowBlank: false,
+                                regex: new RegExp('(\\+375)(?=29|33|44)(\\d{9})'),
+                                regexText: '&#1042;&#1074;&#1077;&#1076;&#1080;&#1090;&#1077; &#1085;&#1086;&#1084;&#1077;&#1088; &#1074; &#1092;&#1086;&#1088;&#1084;&#1072;&#1090;&#1077; +375XXXXXXXXX'
+                            },
+                            {
+                                fieldLabel: '&#1044;&#1086;&#1084;&#1072;&#1096;&#1085;&#1080;&#1081;<font color="red">*</font> ',
+                                name: 'homePhone',
+                                allowBlank: false,
+                                regex: new RegExp('\\+375\\d+'),
+                                regexText: '&#1042;&#1074;&#1077;&#1076;&#1080;&#1090;&#1077; &#1085;&#1086;&#1084;&#1077;&#1088; &#1074; &#1092;&#1086;&#1088;&#1084;&#1072;&#1090;&#1077; +375XXXXXXXXX'
+                            }
+                        ]
                     },
-                    layout: 'anchor',
-                    items: [
-                        {
-                            fieldLabel: 'Мобильный<font color="red">*</font> ',
-                            name: 'phone',
-                            allowBlank: false,
-                            regex: new RegExp('(\\+375)(?=29|33|44)(\\d{9})'),
-                            regexText: 'Введите номер в формате +375XXXXXXXXX'
+                    {
+                        xtype: 'fieldset',
+                        title: '&#1044;&#1072;&#1085;&#1085;&#1099;&#1077; &#1076;&#1083;&#1103; &#1086;&#1090;&#1087;&#1088;&#1072;&#1074;&#1082;&#1080; &#1091;&#1074;&#1077;&#1076;&#1086;&#1084;&#1083;&#1077;&#1085;&#1080;&#1081;',
+                        collapsible: true,
+                        defaultType: 'textfield',
+                        defaults: {
+                            blankText: '&#1055;&#1086;&#1083;&#1077; &#1086;&#1073;&#1103;&#1079;&#1072;&#1090;&#1077;&#1083;&#1100;&#1085;&#1086; &#1076;&#1083;&#1103; &#1079;&#1072;&#1087;&#1086;&#1083;&#1085;&#1077;&#1085;&#1080;&#1103;',
+                            anchor: '100%'
                         },
-                        {
-                            fieldLabel: 'Домашний<font color="red">*</font> ',
-                            name: 'homePhone',
-                            allowBlank: false,
-                            regex: new RegExp('\\+375\\d+'),
-                            regexText: 'Введите номер в формате +375XXXXXXXXX'
-                        }
-                    ]
-                },
-                {
-                    xtype: 'fieldset',
-                    title: 'Данные для отправки уведомлений',
-                    collapsible: true,
-                    defaultType: 'textfield',
-                    defaults: {
-                        blankText: 'Поле обязательно для заполнения',
-                        anchor: '100%'
-                    },
-                    layout: 'anchor',
-                    items: [
-                        {
-                            fieldLabel: 'Email<font color="red">*</font>',
-                            name: 'email',
-                            allowBlank: false,
-                            vtype: 'email'
-                        },
-                        {
-                            fieldLabel: 'Почтовый индекс<font color="red">*</font> ',
-                            name: 'adresInd',
-                            allowBlank: false,
-                            regex: new RegExp('\\d+'),
-                            regexText: 'Индекс должен содержать только цифры'
-                        },
-                        {
-                            fieldLabel: 'Город<font color="red">*</font> ',
-                            name: 'adresGrd',
-                            allowBlank: false,
-                            regex: new RegExp('\\D+'),
-                            regexText: 'Поле должно содержать только буквы'
-                        },
-                        {
-                            fieldLabel: 'Улица<font color="red">*</font> ',
-                            name: 'adresStr',
-                            allowBlank: false,
-                            regex: new RegExp('\\D+'),
-                            regexText: 'Поле должно содержать только буквы'
-                        },
-                        {
-                            fieldLabel: 'Номер дома<font color="red">*</font> ',
-                            name: 'adresHs',
-                            allowBlank: false
-                        },
-                        {
-                            fieldLabel: 'Номер квартиры<font color="red">*</font> ',
-                            name: 'adresFl',
-                            allowBlank: false,
-                            regex: new RegExp('\\d+'),
-                            regexText: 'Поле должно содержать только цифры'
-                        }
+                        layout: 'anchor',
+                        items: [
+                            {
+                                xtype: 'textfield',
+                                fieldLabel: 'Email<font color="red">*</font>',
+                                name: 'email',
+                                allowBlank: false,
+                                vtype: 'email'
+                            },
+                            {
+                                xtype: 'textfield',
+                                fieldLabel: '&#1055;&#1086;&#1095;&#1090;&#1086;&#1074;&#1099;&#1081; &#1080;&#1085;&#1076;&#1077;&#1082;&#1089;<font color="red">*</font> ',
+                                name: 'adresInd',
+                                allowBlank: false,
+                                regex: new RegExp('\\d+'),
+                                regexText: '&#1048;&#1085;&#1076;&#1077;&#1082;&#1089; &#1076;&#1086;&#1083;&#1078;&#1077;&#1085; &#1089;&#1086;&#1076;&#1077;&#1088;&#1078;&#1072;&#1090;&#1100; &#1090;&#1086;&#1083;&#1100;&#1082;&#1086; &#1094;&#1080;&#1092;&#1088;&#1099;'
+                            },
+                            {
+                                xtype: 'textfield',
+                                fieldLabel: '&#1043;&#1086;&#1088;&#1086;&#1076;<font color="red">*</font> ',
+                                name: 'adresGrd',
+                                allowBlank: false,
+                                regex: new RegExp('\\D+'),
+                                regexText: '&#1055;&#1086;&#1083;&#1077; &#1076;&#1086;&#1083;&#1078;&#1085;&#1086; &#1089;&#1086;&#1076;&#1077;&#1088;&#1078;&#1072;&#1090;&#1100; &#1090;&#1086;&#1083;&#1100;&#1082;&#1086; &#1073;&#1091;&#1082;&#1074;&#1099;'
+                            },
+                            {
+                                xtype: 'textfield',
+                                fieldLabel: '&#1059;&#1083;&#1080;&#1094;&#1072;<font color="red">*</font> ',
+                                name: 'adresStr',
+                                allowBlank: false,
+                                regex: new RegExp('\\D+'),
+                                regexText: '&#1055;&#1086;&#1083;&#1077; &#1076;&#1086;&#1083;&#1078;&#1085;&#1086; &#1089;&#1086;&#1076;&#1077;&#1088;&#1078;&#1072;&#1090;&#1100; &#1090;&#1086;&#1083;&#1100;&#1082;&#1086; &#1073;&#1091;&#1082;&#1074;&#1099;'
+                            },
+                            {
+                                xtype: 'textfield',
+                                fieldLabel: '&#1053;&#1086;&#1084;&#1077;&#1088; &#1076;&#1086;&#1084;&#1072;<font color="red">*</font> ',
+                                name: 'adresHs',
+                                allowBlank: false
+                            },
+                            {
+                                xtype: 'textfield',
+                                fieldLabel: '&#1053;&#1086;&#1084;&#1077;&#1088; &#1082;&#1074;&#1072;&#1088;&#1090;&#1080;&#1088;&#1099;<font color="red">*</font> ',
+                                name: 'adresFl',
+                                allowBlank: false,
+                                regex: new RegExp('\\d+'),
+                                regexText: '&#1055;&#1086;&#1083;&#1077; &#1076;&#1086;&#1083;&#1078;&#1085;&#1086; &#1089;&#1086;&#1076;&#1077;&#1088;&#1078;&#1072;&#1090;&#1100; &#1090;&#1086;&#1083;&#1100;&#1082;&#1086; &#1094;&#1080;&#1092;&#1088;&#1099;'
+                            }
 
-                    ]
-                }
-            ]
-        },
-        {
-            xtype: 'container',
-            flex: 7,
-            height: '100%',
-            margin: '0 0 0 10',
-            items: [
-                {
-                    xtype: 'fieldset',
-                    title: 'Данные для поступления',
-                    collapsible: true,
-                    defaultType: 'textfield',
-                    defaults: {
-                        blankText: 'Поле обязательно для заполнения',
-                        anchor: '100%',
-                        labelWidth: 220
-                    },
-                    layout: 'anchor',
-                    items: [
-                        {
-                            xtype: 'combo',
-                            fieldLabel: 'Предполагаемая специальность магистратуры<font color="red">*</font> ',
-                            name: 'idSpecGroup',
-                            allowBlank: false,
-                            store: Ext.create('Magistr.administration.store.SpecStore'),
-                            queryMode: 'local',
-                            displayField: 'specFullName',
-                            valueField: 'specShifr'
+                        ]
+                    }
+                ]
+            },
+            {
+                xtype: 'container',
+                flex: 7,
+                height: '100%',
+                margin: '0 0 0 10',
+                items: [
+                    {
+                        xtype: 'fieldset',
+                        title: '&#1044;&#1072;&#1085;&#1085;&#1099;&#1077; &#1076;&#1083;&#1103; &#1087;&#1086;&#1089;&#1090;&#1091;&#1087;&#1083;&#1077;&#1085;&#1080;&#1103;',
+                        collapsible: true,
+                        defaultType: 'textfield',
+                        defaults: {
+                            blankText: '&#1055;&#1086;&#1083;&#1077; &#1086;&#1073;&#1103;&#1079;&#1072;&#1090;&#1077;&#1083;&#1100;&#1085;&#1086; &#1076;&#1083;&#1103; &#1079;&#1072;&#1087;&#1086;&#1083;&#1085;&#1077;&#1085;&#1080;&#1103;',
+                            anchor: '100%',
+                            labelWidth: 220
                         },
-                        {
-                            xtype: 'combo',
-                            fieldLabel: 'Форма обучения в магистратуре (очное/заочное)<font color="red">*</font> ',
-                            name: 'idFrmObuch',
-                            allowBlank: false,
-                            store: Ext.create('Magistr.administration.store.StudyFormStore'),
-                            queryMode: 'local',
-                            displayField: 'name',
-                            valueField: 'id'
-                        },
-                        {
-                            xtype: 'combo',
-                            fieldLabel: 'Форма обучения в магистратуре (платное/бюджет)<font color="red">*</font> ',
-                            name: 'idPlat',
-                            allowBlank: false,
-                            store: Ext.create('Magistr.administration.store.PaidTypeStore'),
-                            queryMode: 'local',
-                            displayField: 'name',
-                            valueField: 'id'
-                        },
-                        {
-                            fieldLabel: 'Научных трудов<font color="red">*</font> ',
-                            name: 'nauchTrud',
-                            allowBlank: false
-                        },
-                        {
-                            xtype: 'combo',
-                            fieldLabel: 'Иностранный язык (основной, который изучался ранее)<font color="red">*</font> ',
-                            name: 'idInostrLang',
-                            allowBlank: false,
-                            store: Ext.create('Magistr.administration.store.LanguageStore'),
-                            queryMode: 'local',
-                            displayField: 'name',
-                            valueField: 'id'
-                        },
-                        {
-                            xtype: 'combo',
-                            fieldLabel: 'УВО первой ступени (аббревиатура университета)<font color="red">*</font> ',
-                            name: 'idVuz',
-                            allowBlank: false,
-                            store: Ext.create('Magistr.administration.store.VuzStore'),
-                            queryMode: 'local',
-                            displayField: 'name',
-                            valueField: 'id'
-                        },
-                        {
-                            fieldLabel: '<a href="/magistr/resources/static/Specialnosti.pdf" target="_blank">Cпециальность первой ступени ВО (шифр)</a><br>в формате 1-NN NN NN-NN<font color="red">*</font> ',
-                            name: 'spec1Stup',
-                            allowBlank: false
-                        },
-                        {
-                            xtype: 'combo',
-                            fieldLabel: 'Форма обучения первой ступени (очное/заочное)<font color="red">*</font> ',
-                            name: 'idFrmObuch1',
-                            allowBlank: false,
-                            store: Ext.create('Magistr.administration.store.StudyFormStore'),
-                            queryMode: 'local',
-                            displayField: 'name',
-                            valueField: 'id'
-                        },
-                        {
-                            xtype: 'combo',
-                            fieldLabel: 'Форма обучения на первой ступени (платное/бюджет)<font color="red">*</font> ',
-                            name: 'idPlat1',
-                            allowBlank: false,
-                            store: Ext.create('Magistr.administration.store.PaidTypeStore'),
-                            queryMode: 'local',
-                            displayField: 'name',
-                            valueField: 'id'
-                        },
-                        {
-                            fieldLabel: 'Год окончания первой ступени УВО<font color="red">*</font> ',
-                            name: 'godVyp',
-                            allowBlank: false,
-                            regex: new RegExp('\\d{4}'),
-                            regexText: 'Поле должно содержать только цифры'
-                        }
-                    ]
-                }
-            ]
-        }
-    ],
-    buttons: [
-        {
-            text: 'Очистить',
-            handler: function () {
-                this.up('form').getForm().reset();
+                        layout: 'anchor',
+                        items: [
+                            {
+                                xtype: 'combo',
+                                fieldLabel: '&#1055;&#1088;&#1077;&#1076;&#1087;&#1086;&#1083;&#1072;&#1075;&#1072;&#1077;&#1084;&#1072;&#1103; &#1089;&#1087;&#1077;&#1094;&#1080;&#1072;&#1083;&#1100;&#1085;&#1086;&#1089;&#1090;&#1100; &#1084;&#1072;&#1075;&#1080;&#1089;&#1090;&#1088;&#1072;&#1090;&#1091;&#1088;&#1099;<font color="red">*</font> ',
+                                name: 'idSpecGroup',
+                                allowBlank: false,
+                                store: Ext.create('Magistr.administration.store.SpecStore'),
+                                queryMode: 'local',
+                                displayField: 'specFullName',
+                                valueField: 'specShifr'
+                            },
+                            {
+                                xtype: 'combo',
+                                fieldLabel: '&#1060;&#1086;&#1088;&#1084;&#1072; &#1086;&#1073;&#1091;&#1095;&#1077;&#1085;&#1080;&#1103; &#1074; &#1084;&#1072;&#1075;&#1080;&#1089;&#1090;&#1088;&#1072;&#1090;&#1091;&#1088;&#1077; (&#1086;&#1095;&#1085;&#1086;&#1077;/&#1079;&#1072;&#1086;&#1095;&#1085;&#1086;&#1077;)<font color="red">*</font> ',
+                                name: 'idFrmObuch',
+                                allowBlank: false,
+                                store: Ext.create('Magistr.administration.store.StudyFormStore'),
+                                queryMode: 'local',
+                                displayField: 'name',
+                                valueField: 'id'
+                            },
+                            {
+                                xtype: 'combo',
+                                fieldLabel: '&#1060;&#1086;&#1088;&#1084;&#1072; &#1086;&#1073;&#1091;&#1095;&#1077;&#1085;&#1080;&#1103; &#1074; &#1084;&#1072;&#1075;&#1080;&#1089;&#1090;&#1088;&#1072;&#1090;&#1091;&#1088;&#1077; (&#1087;&#1083;&#1072;&#1090;&#1085;&#1086;&#1077;/&#1073;&#1102;&#1076;&#1078;&#1077;&#1090;)<font color="red">*</font> ',
+                                name: 'idPlat',
+                                allowBlank: false,
+                                store: Ext.create('Magistr.administration.store.PaidTypeStore'),
+                                queryMode: 'local',
+                                displayField: 'name',
+                                valueField: 'id'
+                            },
+                            {
+                                xtype: 'textfield',
+                                fieldLabel: '&#1053;&#1072;&#1091;&#1095;&#1085;&#1099;&#1093; &#1090;&#1088;&#1091;&#1076;&#1086;&#1074;<font color="red">*</font> ',
+                                name: 'nauchTrud',
+                                allowBlank: false
+                            },
+                            {
+                                xtype: 'combo',
+                                fieldLabel: '&#1048;&#1085;&#1086;&#1089;&#1090;&#1088;&#1072;&#1085;&#1085;&#1099;&#1081; &#1103;&#1079;&#1099;&#1082; (&#1086;&#1089;&#1085;&#1086;&#1074;&#1085;&#1086;&#1081;, &#1082;&#1086;&#1090;&#1086;&#1088;&#1099;&#1081; &#1080;&#1079;&#1091;&#1095;&#1072;&#1083;&#1089;&#1103; &#1088;&#1072;&#1085;&#1077;&#1077;)<font color="red">*</font> ',
+                                name: 'idInostrLang',
+                                allowBlank: false,
+                                store: Ext.create('Magistr.administration.store.LanguageStore'),
+                                queryMode: 'local',
+                                displayField: 'name',
+                                valueField: 'id'
+                            },
+                            {
+                                xtype: 'combo',
+                                fieldLabel: '&#1059;&#1042;&#1054; &#1087;&#1077;&#1088;&#1074;&#1086;&#1081; &#1089;&#1090;&#1091;&#1087;&#1077;&#1085;&#1080; (&#1072;&#1073;&#1073;&#1088;&#1077;&#1074;&#1080;&#1072;&#1090;&#1091;&#1088;&#1072; &#1091;&#1085;&#1080;&#1074;&#1077;&#1088;&#1089;&#1080;&#1090;&#1077;&#1090;&#1072;)<font color="red">*</font> ',
+                                name: 'idVuz',
+                                allowBlank: false,
+                                store: Ext.create('Magistr.administration.store.VuzStore'),
+                                queryMode: 'local',
+                                displayField: 'name',
+                                valueField: 'id'
+                            },
+                            {
+                                xtype: 'textfield',
+                                fieldLabel: '<a href="/magistr/resources/static/Specialnosti.pdf" target="_blank">C&#1087;&#1077;&#1094;&#1080;&#1072;&#1083;&#1100;&#1085;&#1086;&#1089;&#1090;&#1100; &#1087;&#1077;&#1088;&#1074;&#1086;&#1081; &#1089;&#1090;&#1091;&#1087;&#1077;&#1085;&#1080; &#1042;&#1054; (&#1096;&#1080;&#1092;&#1088;)</a><br>&#1074; &#1092;&#1086;&#1088;&#1084;&#1072;&#1090;&#1077; 1-NN NN NN-NN<font color="red">*</font> ',
+                                name: 'spec1Stup',
+                                allowBlank: false
+                            },
+                            {
+                                xtype: 'combo',
+                                fieldLabel: '&#1060;&#1086;&#1088;&#1084;&#1072; &#1086;&#1073;&#1091;&#1095;&#1077;&#1085;&#1080;&#1103; &#1087;&#1077;&#1088;&#1074;&#1086;&#1081; &#1089;&#1090;&#1091;&#1087;&#1077;&#1085;&#1080; (&#1086;&#1095;&#1085;&#1086;&#1077;/&#1079;&#1072;&#1086;&#1095;&#1085;&#1086;&#1077;)<font color="red">*</font> ',
+                                name: 'idFrmObuch1',
+                                allowBlank: false,
+                                store: Ext.create('Magistr.administration.store.StudyFormStore'),
+                                queryMode: 'local',
+                                displayField: 'name',
+                                valueField: 'id'
+                            },
+                            {
+                                xtype: 'combo',
+                                fieldLabel: '&#1060;&#1086;&#1088;&#1084;&#1072; &#1086;&#1073;&#1091;&#1095;&#1077;&#1085;&#1080;&#1103; &#1085;&#1072; &#1087;&#1077;&#1088;&#1074;&#1086;&#1081; &#1089;&#1090;&#1091;&#1087;&#1077;&#1085;&#1080; (&#1087;&#1083;&#1072;&#1090;&#1085;&#1086;&#1077;/&#1073;&#1102;&#1076;&#1078;&#1077;&#1090;)<font color="red">*</font> ',
+                                name: 'idPlat1',
+                                allowBlank: false,
+                                store: Ext.create('Magistr.administration.store.PaidTypeStore'),
+                                queryMode: 'local',
+                                displayField: 'name',
+                                valueField: 'id'
+                            },
+                            {
+                                xtype: 'textfield',
+                                fieldLabel: '&#1043;&#1086;&#1076; &#1086;&#1082;&#1086;&#1085;&#1095;&#1072;&#1085;&#1080;&#1103; &#1087;&#1077;&#1088;&#1074;&#1086;&#1081; &#1089;&#1090;&#1091;&#1087;&#1077;&#1085;&#1080; &#1059;&#1042;&#1054;<font color="red">*</font> ',
+                                name: 'godVyp',
+                                allowBlank: false,
+                                regex: new RegExp('\\d{4}'),
+                                regexText: '&#1055;&#1086;&#1083;&#1077; &#1076;&#1086;&#1083;&#1078;&#1085;&#1086; &#1089;&#1086;&#1076;&#1077;&#1088;&#1078;&#1072;&#1090;&#1100; &#1090;&#1086;&#1083;&#1100;&#1082;&#1086; &#1094;&#1080;&#1092;&#1088;&#1099;'
+                            }
+                        ]
+                    }
+                ]
             }
-        },
-        {
-            text: 'Сохранить',
-            formBind: true, //only enabled once the form is valid
-            disabled: true,
-            handler: function () {
-                var form = this.up('form').getForm();
-                if (form.isValid()) {
-                    form.submit({
-                        success: function (form, action) {
-                            Ext.Msg.alert('Информация', 'Вы успешно зарегистрированы.');
-                            form.reset();
-                        },
-                        failure: function (form, action) {
-                            Ext.Msg.alert('Ошибка', 'Ошибка сервера. Попробуйте зарегистрироваться позже.');
-                        }
-                    });
+        ];
+        me.buttons = [
+            {
+                text: '&#1054;&#1095;&#1080;&#1089;&#1090;&#1080;&#1090;&#1100;',
+                handler: function () {
+                    this.up('form').getForm().reset();
+                }
+            },
+            {
+                text: '&#1057;&#1086;&#1093;&#1088;&#1072;&#1085;&#1080;&#1090;&#1100;',
+                formBind: true, //only enabled once the form is valid
+                disabled: true,
+                handler: function () {
+                    var form = this.up('form').getForm();
+                    if (form.isValid()) {
+                        form.submit({
+                            success: function (form, action) {
+                                Ext.Msg.alert('&#1048;&#1085;&#1092;&#1086;&#1088;&#1084;&#1072;&#1094;&#1080;&#1103;', '&#1042;&#1099; &#1091;&#1089;&#1087;&#1077;&#1096;&#1085;&#1086; &#1079;&#1072;&#1088;&#1077;&#1075;&#1080;&#1089;&#1090;&#1088;&#1080;&#1088;&#1086;&#1074;&#1072;&#1085;&#1099;.');
+                                form.reset();
+                            },
+                            failure: function (form, action) {
+                                Ext.Msg.alert('&#1054;&#1096;&#1080;&#1073;&#1082;&#1072;', '&#1054;&#1096;&#1080;&#1073;&#1082;&#1072; &#1089;&#1077;&#1088;&#1074;&#1077;&#1088;&#1072;. &#1055;&#1086;&#1087;&#1088;&#1086;&#1073;&#1091;&#1081;&#1090;&#1077; &#1079;&#1072;&#1088;&#1077;&#1075;&#1080;&#1089;&#1090;&#1088;&#1080;&#1088;&#1086;&#1074;&#1072;&#1090;&#1100;&#1089;&#1103; &#1087;&#1086;&#1079;&#1078;&#1077;.');
+                            }
+                        });
+                    }
+                }
+            },
+            {
+                text: '&#1047;&#1072;&#1082;&#1088;&#1099;&#1090;&#1100;',
+                handler: function () {
+                    this.up('form').getForm().reset();
+                    this.up('form').collapse();
                 }
             }
-        },
-        {
-            text: 'Закрыть',
-            handler: function () {
-                this.up('form').getForm().reset();
-                this.up('form').collapse();
-            }
-        }
-    ]
+        ];
+        me.callParent(arguments);
+    }
 });
